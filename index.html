@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chrome Music Lab local index</title>
+  <title>Chrome Music Lab - 本地索引</title>
   <style>
     :root {
       --ink: #18212f;
@@ -177,97 +177,95 @@
 <body>
   <main>
     <header>
-      <h1>Chrome Music Lab local index</h1>
+      <h1>Chrome Music Lab 本地索引</h1>
       <p class="lead">
-        This page serves the downloaded <code>googlecreativelab/chrome-music-lab</code>
-        repository from one local server. The original repo is split into independent experiments,
-        and the legacy 2016 build chains have been upgraded to run on Node 22 with Python 3.
+        本页面将 Google 出品的 <code>googlecreativelab/chrome-music-lab</code> 项目部署到本地服务器。
+        所有实验均已构建完毕，可直接点击体验。
       </p>
       <div class="notice">
-        Build note: the webpack experiments now use webpack 5 and Dart Sass instead of
-        <code>node-sass</code>. <code>Spectrogram</code> now uses a small modern Node build script
-        instead of gulp 3/Compass. Sass still reports deprecation warnings for old
-        <code>@import</code> and slash division syntax, but the apps build successfully.
+        ⚠️ 构建说明：Webpack 实验已升级到 webpack 5 + Dart Sass（替代已废弃的 <code>node-sass</code>）。
+        Spectrogram 用 Node 构建脚本替代了 gulp 3。Sass 因遗留 <code>@import</code> 语法会有弃用警告，
+        但不影响功能。
       </div>
     </header>
 
-    <section class="grid" aria-label="Chrome Music Lab experiments">
+    <section class="grid" aria-label="Chrome Music Lab 实验列表">
       <article class="card">
-        <span class="status ready">Ready</span>
-        <h2>Sound Waves</h2>
-        <p>Prebuilt static bundle is included in the repo under <code>soundwaves/dist</code>.</p>
+        <span class="status ready">✅ 就绪</span>
+        <h2>声波 (Sound Waves)</h2>
+        <p>预构建静态包，位于 <code>soundwaves/dist</code> 目录。</p>
         <div class="actions">
-          <a class="button" href="soundwaves/dist/">Open app</a>
-          <a class="button secondary" href="soundwaves/README.md">README</a>
+          <a class="button" href="soundwaves/dist/">打开实验</a>
+          <a class="button secondary" href="soundwaves/README.md">说明</a>
         </div>
       </article>
 
       <article class="card">
-        <span class="status partial">Static source</span>
-        <h2>Harmonics &amp; Strings</h2>
-        <p>Plain HTML/JS/audio files are present. It loads Tone.js from the original remote Google host.</p>
+        <span class="status partial">🔧 静态源码</span>
+        <h2>泛音与弦 (Harmonics &amp; Strings)</h2>
+        <p>纯 HTML/JS/audio 文件，Tone.js 从原始 Google 远程地址加载。</p>
         <div class="actions">
-          <a class="button" href="harmonics%20%26%20strings/">Open app</a>
+          <a class="button" href="harmonics%20%26%20strings/">打开实验</a>
         </div>
       </article>
 
       <article class="card">
-        <span class="status ready">Ready</span>
-        <h2>Arpeggios</h2>
-        <p>Upgraded webpack build outputs <code>build/Main.js</code> and async chunks.</p>
+        <span class="status ready">✅ 就绪</span>
+        <h2>琶音 (Arpeggios)</h2>
+        <p>升级版 webpack 构建，输出 <code>build/Main.js</code> 及异步分块。</p>
         <div class="actions">
-          <a class="button" href="arpeggios/">Open app</a>
-          <a class="button secondary" href="arpeggios/README.md">README</a>
+          <a class="button" href="arpeggios/">打开实验</a>
+          <a class="button secondary" href="arpeggios/README.md">说明</a>
         </div>
       </article>
 
       <article class="card">
-        <span class="status ready">Ready</span>
-        <h2>Chords</h2>
-        <p>Upgraded webpack build outputs <code>build/Main.js</code> and async chunks.</p>
+        <span class="status ready">✅ 就绪</span>
+        <h2>和弦 (Chords)</h2>
+        <p>升级版 webpack 构建，输出 <code>build/Main.js</code> 及异步分块。</p>
         <div class="actions">
-          <a class="button" href="chords/">Open app</a>
-          <a class="button secondary" href="chords/README.md">README</a>
+          <a class="button" href="chords/">打开实验</a>
+          <a class="button secondary" href="chords/README.md">说明</a>
         </div>
       </article>
 
       <article class="card">
-        <span class="status ready">Ready</span>
-        <h2>Melody Maker</h2>
-        <p>Upgraded webpack build outputs <code>build/Main.js</code> and async chunks.</p>
+        <span class="status ready">✅ 就绪</span>
+        <h2>旋律创作器 (Melody Maker)</h2>
+        <p>升级版 webpack 构建，输出 <code>build/Main.js</code> 及异步分块。</p>
         <div class="actions">
-          <a class="button" href="melodymaker/">Open app</a>
-          <a class="button secondary" href="melodymaker/README.md">README</a>
+          <a class="button" href="melodymaker/">打开实验</a>
+          <a class="button secondary" href="melodymaker/README.md">说明</a>
         </div>
       </article>
 
       <article class="card">
-        <span class="status ready">Ready</span>
-        <h2>Piano Roll</h2>
-        <p>Upgraded webpack build outputs <code>build/PianoRoll.js</code> and async chunks.</p>
+        <span class="status ready">✅ 就绪</span>
+        <h2>钢琴卷帘 (Piano Roll)</h2>
+        <p>升级版 webpack 构建，输出 <code>build/PianoRoll.js</code> 及异步分块。</p>
         <div class="actions">
-          <a class="button" href="pianoroll/">Open app</a>
-          <a class="button secondary" href="pianoroll/README.md">README</a>
+          <a class="button" href="pianoroll/">打开实验</a>
+          <a class="button secondary" href="pianoroll/README.md">说明</a>
         </div>
       </article>
 
       <article class="card">
-        <span class="status ready">Ready</span>
-        <h2>Sound Spinner</h2>
-        <p>Upgraded webpack build outputs <code>build/Main.js</code> and async chunks.</p>
+        <span class="status ready">✅ 就绪</span>
+        <h2>声音旋转器 (Sound Spinner)</h2>
+        <p>升级版 webpack 构建，输出 <code>build/Main.js</code> 及异步分块。</p>
         <div class="actions">
-          <a class="button" href="soundspinner/">Open app</a>
-          <a class="button secondary" href="soundspinner/README.md">README</a>
+          <a class="button" href="soundspinner/">打开实验</a>
+          <a class="button secondary" href="soundspinner/README.md">说明</a>
         </div>
       </article>
 
       <article class="card">
-        <span class="status ready">Ready</span>
-        <h2>Spectrogram</h2>
-        <p>Modern Node build outputs a static app under <code>spectrogram/build</code>.</p>
+        <span class="status ready">✅ 就绪</span>
+        <h2>频谱图 (Spectrogram)</h2>
+        <p>现代 Node 构建，静态输出到 <code>spectrogram/build</code> 目录。</p>
         <div class="actions">
-          <a class="button" href="spectrogram/build/">Open app</a>
-          <a class="button secondary" href="spectrogram/README.md">README</a>
+          <a class="button" href="spectrogram/build/">打开实验</a>
+          <a class="button secondary" href="spectrogram/README.md">说明</a>
         </div>
       </article>
     </section>
