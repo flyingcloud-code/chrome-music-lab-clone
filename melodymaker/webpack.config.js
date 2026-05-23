@@ -14,45 +14,45 @@
  * limitations under the License.
  */
 
-var webpack = require("webpack");
 var path = require("path");
-
-var PROD = JSON.parse(process.env.PROD_ENV || '0');
 
 module.exports = {
 	"context": __dirname,
 	entry: {
-		"Main": "app/Main",
+		"Main": "./app/Main",
 	},
 	output: {
+		path: __dirname,
 		filename: "./build/[name].js",
 		chunkFilename: "./build/[id].js",
 		sourceMapFilename : "[file].map",
 	},
 	resolve: {
-		root: __dirname,
-		modulesDirectories : ["style", "app", "third_party/Tone.js/", "third_party", "node_modules"],
+		modules : [
+			"node_modules",
+			__dirname,
+			path.resolve(__dirname, "style"),
+			path.resolve(__dirname, "app"),
+			path.resolve(__dirname, "third_party/Tone.js"),
+			path.resolve(__dirname, "third_party")
+		],
 	},
-	plugins: PROD ? [
-	    new webpack.optimize.UglifyJsPlugin({minimize: true})
-	  ] : [],
 	 module: {
-		loaders: [
+		rules: [
 			{
 				test: /\.scss$/,
-				loader: "style!css!autoprefixer-loader!sass"
-			},
-			{
-				test: /\.json$/,
-				loader: "json"
+				use: ["style-loader", "css-loader", "sass-loader"]
 			},
 			{
 				test: /\.(png|gif)$/,
-				loader: "url-loader",
+				type: "asset/inline"
 			}, 
 			{
 				test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-				loader : "file-loader?name=images/font/[hash].[ext]"
+				type : "asset/resource",
+				generator: {
+					filename: "images/font/[hash][ext]"
+				}
 			}
 		]
 	}

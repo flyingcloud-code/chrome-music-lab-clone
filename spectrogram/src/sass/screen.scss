@@ -103,6 +103,31 @@ body,html{
 	}
 }
 
+.icon::before {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 68%;
+	filter: invert(1);
+}
+
+.icon-808::before { background-image: url("../img/icons/808.svg"); }
+.icon-bird::before { background-image: url("../img/icons/bird.svg"); }
+.icon-computer::before { background-image: url("../img/icons/computer.svg"); }
+.icon-draw::before { background-image: url("../img/icons/draw.svg"); }
+.icon-flute::before { background-image: url("../img/icons/flute.svg"); }
+.icon-guy::before { background-image: url("../img/icons/guy.svg"); }
+.icon-harp::before { background-image: url("../img/icons/harp.svg"); }
+.icon-mic::before { background-image: url("../img/icons/mic.svg"); }
+.icon-piano-01-reverse-01::before { background-image: url("../img/icons/piano-01-reverse-01.svg"); }
+.icon-piano-01::before { background-image: url("../img/icons/piano-01.svg"); }
+.icon-trombone::before { background-image: url("../img/icons/trombone.svg"); }
+.icon-wave::before { background-image: url("../img/icons/wave.svg"); }
+.icon-wine::before { background-image: url("../img/icons/wine.svg"); }
+
 canvas {
 	position: fixed;
 	top: 0;

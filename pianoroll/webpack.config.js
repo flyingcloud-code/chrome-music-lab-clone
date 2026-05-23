@@ -14,44 +14,45 @@
  * limitations under the License.
  */
 
-var webpack = require("webpack");
-
-var PROD = JSON.parse(process.env.PROD_ENV || '0');
+var path = require("path");
 
 module.exports = {
 	"context": __dirname,
 	entry: {
-		"PianoRoll": "app/Main",
+		"PianoRoll": "./app/Main",
 	},
 	output: {
+		path: __dirname,
 		filename: "./build/[name].js",
 		chunkFilename: "./build/[id].js",
 		sourceMapFilename : "[file].map",
 	},
 	resolve: {
-		root: __dirname,
-		modulesDirectories : ["node_modules", "style", "app", "third_party", "third_party/Tone.js/"],
+		modules : [
+			"node_modules",
+			__dirname,
+			path.resolve(__dirname, "style"),
+			path.resolve(__dirname, "app"),
+			path.resolve(__dirname, "third_party"),
+			path.resolve(__dirname, "third_party/Tone.js")
+		],
 	},
-	plugins: PROD ? [
-	    new webpack.optimize.UglifyJsPlugin({minimize: true})
-	  ] : [],
 	 module: {
-		loaders: [
+		rules: [
 			{
 				test: /\.scss$/,
-				loader: "style!css!autoprefixer!sass"
+				use: ["style-loader", "css-loader", "sass-loader"]
 			},
 			{
 				test: /\.(png|gif)$/,
-				loader: "url-loader",
-			},
-			{
-				test: /\.json$/,
-				loader: "json",
+				type: "asset/inline"
 			},
 			{
 				test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-				loader : "file-loader?name=images/font/[hash].[ext]"
+				type : "asset/resource",
+				generator: {
+					filename: "images/font/[hash][ext]"
+				}
 			}
 		]
 	}
